@@ -58,8 +58,13 @@
 \noindent\hspace*{\centeroffset}\makebox[0pt][l]{\begin{minipage}{\textwidth}
 \flushright
 {\bfseries 
-by Mario Pineda\\} 
-\today
+Mario Pineda\\} 
+MPK Analytics, Inc.\\
+Suite 300, 8507 - 112 Street \\
+Edmonton, AB T6G 2L7 \\
+Canada\\[1cm]
+
+Version: \Sexpr{file.info("todo.pdf")$mtime}
 \end{minipage}}
 
 \addtolength{\textwidth}{\centeroffset}
@@ -67,7 +72,25 @@ by Mario Pineda\\}
 \section*{Abstract}
 This vignette provides an abbreviated log of milesones that have been reached and that still need to be reached.
 \section*{About this document}
-This document was created using Sweave, a literate programming tool for \R. To generate this documentation (i.e. weaving) may require a UNIX platform to allow for system calls. Weaving may take a long time. To speed up repeated weaving intermediate data and figures may be cached. For system requirements see end of document.
+This document was created using Sweave, a literate programming tool for \R. To generate this documentation (i.e. weaving) may require a UNIX platform to allow for system calls. Weaving may take a long time. To speed up repeated weaving intermediate data and figures may be cached. For system requirements see end of document. This document (incl. its source is availiable at \url{https://github.com/mariopineda}.) 
+\pagebreak
+
+Copyright (C) 2012 Mario Pineda \\
+
+MPK Analytics, Inc.\\
+Suite 300, 8507 - 112 Street \\
+Edmonton, AB T6G 2L7 \\
+Canada \\
+
+Ph: 866.406.0187\\
+Fax: 780.800.6929\\
+Email: \href{mailto:info@mpkanalytics.com}{info@mpkanalytics.com}\\
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. \\
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. \\
+
+You should have received a copy of the GNU General Public License along with this program.  If not, see \href{http://www.gnu.org/licenses/}{http://www.gnu.org/licenses/}.
 \pagebreak
 
 <<echo=FALSE, results=hide>>=
@@ -86,6 +109,7 @@ start.time <- proc.time()[3]
 % Session information
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
+\thispagestyle{empty}
 \section*{\label{session_information}Session information}
 <<echo=FALSE>>=
 end.time <- proc.time()[3]
@@ -96,5 +120,12 @@ duration <- round(end.time - start.time)
 toLatex(sessionInfo())
 @
 The \R\ code in this chapter took \Sexpr{duration} seconds to execute, the last time the souce file was modified was on \Sexpr{file.info("todo.Rnw")$mtime} and the last time the PDF file was modified was on \Sexpr{file.info("todo.pdf")$mtime}.
-
+\vfill
+\centerline{\includegraphics{MPK_Analytics_logo.pdf}}
+\begin{center}
+{\bf MPK Analytics --- Transforming Data Into Insight}\\
+Suite 300, 8507 - 112 Street, Edmonton, AB T6G 2L7, Canada \\
+Ph: 866.406.0187, Fax: 780.800.6929\\
+Email: \href{mailto:info@mpkanalytics.com}{info@mpkanalytics.com}\\
+\end{center}
 \end{document}
