@@ -1,0 +1,100 @@
+\documentclass[11pt,oneside]{article}
+\usepackage{amsmath, indentfirst, Sweave, rotating, graphicx, amsmath, float, natbib, setspace, anysize, url, hyperref, fancyhdr, lscape, listings}
+\usepackage[usenames]{color}
+\usepackage[toc,page,title,titletoc]{appendix}
+\usepackage[nomarkers, nolists]{endfloat}
+
+%\bibliographystyle{jss}
+\usepackage[final]{pdfpages}
+\setkeys{Gin}{width=0.65\textwidth}
+\setstretch{1.25} % Set line spacing
+\pagestyle{fancy}
+\setlength{\parindent}{0in}
+
+\definecolor{darkred}{rgb}{0.545,0,0} 
+\definecolor{midnightblue}{rgb}{0.098,0.098,0.439} 
+\definecolor{darkgreen}{rgb}{0.098, 0.439, 0.098}
+
+\usepackage{relsize}
+\DefineVerbatimEnvironment{Sinput}{Verbatim} {xleftmargin=2em, fontsize=\relsize{-1}, baselinestretch=1, formatcom={\color{midnightblue}}} 
+\DefineVerbatimEnvironment{Soutput}{Verbatim}{xleftmargin=2em, fontsize=\relsize{-1}, baselinestretch=1,formatcom={\color{darkred}}} 
+\DefineVerbatimEnvironment{Scode}{Verbatim}{xleftmargin=2em, fontsize=\relsize{-1}, baselinestretch=1,formatcom={\color{darkgreen}}} 
+\fvset{listparameters={\setlength{\topsep}{0pt}}} 
+\renewenvironment{Schunk}{\vspace{\topsep}}{\vspace{\topsep}}
+
+\newcommand\R{{\sf R}}
+\newcommand{\flag}[1]{\footnote{\textcolor{red}{#1}}\marginpar{\textcolor{red}{\framebox[1cm][c]{\Huge !}}} }
+\newcommand{\ml}[1]{\footnote{\textcolor{red}{Mark: #1}}\marginpar{\textcolor{blue}{\framebox[1.5cm][c]{\Large Mark!}}} }
+\newcommand{\bc}[1]{\footnote{\textcolor{red}{Barry: #1}}\marginpar{\textcolor{red}{\framebox[1.5cm][c]{\Large Barry!}}} }
+\newcommand{\comment}[1]{ \textcolor{red}{#1} }
+\newcommand{\dsfrac}[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+\newcommand{\sqkm}{km$^2$}
+\renewcommand\bibname{References}
+\usepackage{color}
+\newcommand{\todo}{\textcolor[rgb]{1,0,0}{Todo}}
+\newcommand{\done}{\textcolor[rgb]{0,.5,0}{Done}}
+\newcommand{\inprogress}{\textcolor[rgb]{0,0,.9}{In progress}}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newlength{\centeroffset}
+\setlength{\centeroffset}{-0.5\oddsidemargin}
+\addtolength{\centeroffset}{0.5\evensidemargin}
+\addtolength{\textwidth}{-\centeroffset}
+\thispagestyle{empty}
+\vspace*{\stretch{1}}
+\noindent\hspace*{\centeroffset}\makebox[0pt][l]{\begin{minipage}{\textwidth}
+\flushright
+{\Large\bfseries Prediction of MPB outbreaks using Markov process logistic regression}
+\noindent\rule[-1ex]{\textwidth}{5pt}\\[2.5ex]
+{\large\bfseries Past and future project milestones}
+\end{minipage}}
+
+\vspace{\stretch{.2}}
+\noindent\hspace*{\centeroffset}\makebox[0pt][l]{\begin{minipage}{\textwidth}
+\flushright
+{\bfseries 
+by Mario Pineda\\} 
+\today
+\end{minipage}}
+
+\addtolength{\textwidth}{\centeroffset}
+\vspace{\stretch{2}}
+\section*{Abstract}
+This vignette provides an abbreviated log of milesones that have been reached and that still need to be reached.
+\section*{About this document}
+This document was created using Sweave, a literate programming tool for \R. To generate this documentation (i.e. weaving) may require a UNIX platform to allow for system calls. Weaving may take a long time. To speed up repeated weaving intermediate data and figures may be cached. For system requirements see end of document.
+\pagebreak
+
+<<echo=FALSE, results=hide>>=
+options(width=80)
+options(continue=" ")
+start.time <- proc.time()[3]
+@
+
+\begin{description}
+\item[\todo] Beat Felix's records
+\item[\done] Dance Gangnam Style 
+\item[\inprogress] Standing on the shoulders of giants
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Session information
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section*{\label{session_information}Session information}
+<<echo=FALSE>>=
+end.time <- proc.time()[3]
+duration <- round(end.time - start.time)
+@
+
+<<echo=FALSE, results=tex>>=
+toLatex(sessionInfo())
+@
+The \R\ code in this chapter took \Sexpr{duration} seconds to execute, the last time the souce file was modified was on \Sexpr{file.info("todo.Rnw")$mtime} and the last time the PDF file was modified was on \Sexpr{file.info("todo.pdf")$mtime}.
+
+\end{document}
