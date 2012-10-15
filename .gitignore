@@ -6,5 +6,5 @@
 Thumbs.db
 *.log
 *.pdf
-*.synctexi.gz
+*.synctex.gz
 *.tex
