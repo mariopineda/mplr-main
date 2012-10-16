@@ -70,12 +70,12 @@ Version: \Sexpr{file.info("todo.pdf")$mtime}
 \addtolength{\textwidth}{\centeroffset}
 \vspace{\stretch{2}}
 \section*{Abstract}
-This vignette provides an abbreviated log of milesones that have been reached and that still need to be reached.
+This vignette provides an abbreviated log of milestones that have been reached and that still need to be reached.
 \section*{About this document}
-This document was created using Sweave, a literate programming tool for \R. To generate this documentation (i.e. weaving) may require a UNIX platform to allow for system calls. Weaving may take a long time. To speed up repeated weaving intermediate data and figures may be cached. For system requirements see end of document. This document (incl. its source is availiable at \url{https://github.com/mariopineda}.) 
+This document was created using Sweave, a literate programming tool for \R. To generate this documentation (i.e. weaving) may require a UNIX platform to allow for system calls. Weaving may take a long time. To speed up repeated weaving intermediate data and figures may be cached. For system requirements see end of document. This document (incl. the source) is availiable at \url{https://github.com/mariopineda}.
 \pagebreak
 
-Copyright (C) 2012 Mario Pineda \\
+Copyright (c) 2012 Mario Pineda \\
 
 MPK Analytics, Inc.\\
 Suite 300, 8507 - 112 Street \\
@@ -98,11 +98,19 @@ options(width=80)
 options(continue=" ")
 start.time <- proc.time()[3]
 @
+\section*{Achieved milestones}
+\begin{itemize}
+\item Obtained raw red top data from Fangliang He with an email confirmation its Open Data status.
+\item  
+\end{itemize}
 
+
+\section*{Todo milestones}
 \begin{description}
-\item[\todo] Beat Felix's records
-\item[\done] Dance Gangnam Style 
-\item[\inprogress] Standing on the shoulders of giants
+\item[\todo] Check on CSI data integrity. BioSim flaked out over parts of BC in the initial runs, need to check that the corrupted data has been removed and replaced by the correct version.
+\item[\todo] Follow up on CSI data conversion with GIS Analyst 
+\item[\todo] Perform model selection. We would like to use BIC. Mark had an argument for why BIC would be prefered over AIC in this case. Request a copy of AP's write-up on the virtues of BIC.
+\item[\todo] It appears the nn1 and nn2 variables include the focal location in the summation. Figure out how to deal with this.
 \end{description}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
