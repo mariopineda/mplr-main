@@ -11,10 +11,6 @@
 \pagestyle{fancy}
 \setlength{\parindent}{0in}
 
-\definecolor{darkred}{rgb}{0.545,0,0} 
-\definecolor{midnightblue}{rgb}{0.098,0.098,0.439} 
-\definecolor{darkgreen}{rgb}{0.098, 0.439, 0.098}
-
 \usepackage{relsize}
 \DefineVerbatimEnvironment{Sinput}{Verbatim} {xleftmargin=2em, fontsize=\relsize{-1}, baselinestretch=1, formatcom={\color{midnightblue}}} 
 \DefineVerbatimEnvironment{Soutput}{Verbatim}{xleftmargin=2em, fontsize=\relsize{-1}, baselinestretch=1,formatcom={\color{darkred}}} 
@@ -31,9 +27,18 @@
 \newcommand{\sqkm}{km$^2$}
 \renewcommand\bibname{References}
 \usepackage{color}
-\newcommand{\todo}{\textcolor[rgb]{1,0,0}{Todo}}
-\newcommand{\done}{\textcolor[rgb]{0,.5,0}{Done}}
-\newcommand{\inprogress}{\textcolor[rgb]{0,0,.9}{In progress}}
+
+% Define some colors
+\definecolor{darkred}{rgb}{0.545,0,0} 
+\definecolor{midnightblue}{rgb}{0.098,0.098,0.439} 
+\definecolor{darkgreen}{rgb}{0.098, 0.439, 0.098}
+\definecolor{orange}{rgb}{1,0.5,0}
+
+% Define some tagas for the todo list
+\newcommand{\done}[1]{\textcolor{darkgreen}{\bf [DONE]} #1\\}
+\newcommand{\inprogress}[1]{\textcolor{blue}{\bf [IN PROGRESS]} #1\\} 
+\newcommand{\onhold}[1]{\textcolor{orange}{\bf [ON HOLD]} #1\\}
+\newcommand{\todo}[1]{\textcolor{red}{\bf [TODO]} #1\\}
 
 \begin{document}
 \SweaveOpts{concordance=TRUE}
@@ -98,20 +103,37 @@ options(width=80)
 options(continue=" ")
 start.time <- proc.time()[3]
 @
-\section*{Achieved milestones}
-\begin{itemize}
-\item Obtained raw red top data from Fangliang He with an email confirmation its Open Data status.
-\item  
-\end{itemize}
 
+\section*{Admin}
+\done{Set up of password protected backup (sirius) for the project and data.}
+\done{Look into running the model under the Enterprise R version using the lab HPC infrastructure. Explored options together with Mark Duller but model ran slower and this apporach was abandoned in favour of optimizing the model ro run on my laptop.}
+\inprogress{Clean up an organize project files and data backed-up located on sirius. This is the version of the project that will be handed over to Devin. Mario will not continue working on this version of the project.}
+\inprogress{Develop a series of \R\ packages and continue development of project.}
 
-\section*{Todo milestones}
-\begin{description}
-\item[\todo] Check on CSI data integrity. BioSim flaked out over parts of BC in the initial runs, need to check that the corrupted data has been removed and replaced by the correct version.
-\item[\todo] Follow up on CSI data conversion with GIS Analyst 
-\item[\todo] Perform model selection. We would like to use BIC. Mark had an argument for why BIC would be prefered over AIC in this case. Request a copy of AP's write-up on the virtues of BIC.
-\item[\todo] It appears the nn1 and nn2 variables include the focal location in the summation. Figure out how to deal with this.
-\end{description}
+\section*{Coding}
+\done{Develop Empirical Bayes model in C++.}
+\done{Computational optimization of predictive model.}
+
+\section*{Modelling}
+\inprogress{Perform model selection. We would like to use BIC. Mark had an argument for why BIC would be prefered over AIC in this case. Request a copy of AP's write-up on the virtues of BIC.}
+\todo{Run model using the CSI variables (i.e. by replacing the temperature variables).}
+\todo{Run model using temperature predictions (from Subhash Empirical Bayes).}
+\todo{Run model for 100\% of BC.}
+\todo{Figure out what results we are interested in, i.e. what message should the manuscript have? There seems to be two alterantives, (1) along the lines of the old manuscript (i.e. predictive model) or (2) focusing on the role of winter temperature on the spatio-temporal outbreak dynamics. The second option may be of more general interest.}
+\todo{Calibration of the empirical Bayes temperature prediction model.}
+
+\section*{Data}
+\done{Obtained raw red top data from Fangliang He with an email confirmation its Open Data status. Cleaned up, prepared and analyzed red top data. (See vignette)}
+\done{Clean up, preparation and analysis of weather station data that was obtained from Tomas. (See vignette)}
+\done{Interpolations of temperature variables (annual degree days and minimum winter temperature). (See vignette)}
+\done{Generated summer Climate Suitability Indices (CSI) data with Barry using the Powel and Logan  recipie.}
+\done{Obtained new DEM data and BC outline data from GIS Analyst. Prepared and analyzed the the data. (See vignette)}
+\done{Obtained pine cover data from Barry, GIS Analyst performed preprocessing and Mario did the final clean up and analysis.}
+\todo{Check on CSI data integrity. BioSim flaked out over parts of BC in the initial runs, need to check that the corrupted data has been removed and replaced by the correct version.}
+\todo{Fix data inconsistencies at the edges of the DEM. This will have no effect on the results but is required for the model to run for all of BC.}
+\onhold{Follow up on CSI data conversion with GIS Analyst.}
+\todo{It appears the {\tt nn1} and {\tt nn2} variables include the focal location in the summation. Figure out how to deal with this.}
+\todo{For the manuscript we need to ppdate red top data and temperature data for post-2003 years and feed model with it.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Session information
