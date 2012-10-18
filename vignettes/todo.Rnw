@@ -106,34 +106,39 @@ start.time <- proc.time()[3]
 
 \section*{Admin}
 \done{Set up of password protected backup (sirius) for the project and data.}
-\done{Look into running the model under the Enterprise R version using the lab HPC infrastructure. Explored options together with Mark Duller but model ran slower and this apporach was abandoned in favour of optimizing the model ro run on my laptop.}
-\inprogress{Clean up an organize project files and data backed-up located on sirius. This is the version of the project that will be handed over to Devin. Mario will not continue working on this version of the project.}
-\inprogress{Develop a series of \R\ packages and continue development of project.}
+\done{Look into running the model with the Revolution Analytics Enterprise R version using the lab HPC infrastructure. Explored options together with Mark Duller but model ran slower so this apporach was abandoned in favour of optimizing the model to run on my laptop.}
+\inprogress{Clean up an organize the sirius repository. This version of the project will be handed over to Devin and Mario will not continue working on off this repository.}
+\inprogress{Development a series of \R\ packages containing the various components of the project. Mario will continue the development of the project using the R packages.}
+\todo{Once the sirius repository has been finalized it has to be moved to me moved from Mario's account to its final resting place.}
 
 \section*{Coding}
-\done{Develop Empirical Bayes model in C++.}
+\done{Develop Empirical Bayes model in C++. (See vignette {\it Preparation and analysis of weather station data and temperature interpolations})}
 \done{Computational optimization of predictive model.}
+\todo{Integrate the R packages smartly.}
 
 \section*{Modelling}
+\done{Preliminary runs of MPLR model for single years and part of BC - proof of concept. (see vignette {\it Autologistic model outline})}
+\done{Preliminary runs of MPLR model for all years and part of BC- proof of concept.}
+\todo{Preliminary runs of MPLR model for all years and all of BC - proof of concept.}
+\inprogress{Final model version running all years for all of BC, computationally optimized for best performance and debugged.}
 \inprogress{Perform model selection. We would like to use BIC. Mark had an argument for why BIC would be prefered over AIC in this case. Request a copy of AP's write-up on the virtues of BIC.}
 \todo{Run model using the CSI variables (i.e. by replacing the temperature variables).}
-\todo{Run model using temperature predictions (from Subhash Empirical Bayes).}
-\todo{Run model for 100\% of BC.}
+\todo{Run model using temperature predictions (see vignette {\it Temperature predictions}).}
 \todo{Figure out what results we are interested in, i.e. what message should the manuscript have? There seems to be two alterantives, (1) along the lines of the old manuscript (i.e. predictive model) or (2) focusing on the role of winter temperature on the spatio-temporal outbreak dynamics. The second option may be of more general interest.}
 \todo{Calibration of the empirical Bayes temperature prediction model.}
 
 \section*{Data}
-\done{Obtained raw red top data from Fangliang He with an email confirmation its Open Data status. Cleaned up, prepared and analyzed red top data. (See vignette)}
-\done{Clean up, preparation and analysis of weather station data that was obtained from Tomas. (See vignette)}
-\done{Interpolations of temperature variables (annual degree days and minimum winter temperature). (See vignette)}
+\done{Obtained raw red top data from Fangliang He with an email confirmation its Open Data status. Cleaned up, prepared and analyzed red top data. (See vignette {\it Red top data})}
+\done{Clean up, preparation and analysis of weather station data that was obtained from Tomas. (See vignette {\it Preparation and analysis of weather station data and temperature interpolations})}
+\done{Interpolations of temperature variables (annual degree days and minimum winter temperature). (See vignette {\it Preparation and analysis of weather station data and temperature interpolations})}
 \done{Generated summer Climate Suitability Indices (CSI) data with Barry using the Powel and Logan  recipie.}
-\done{Obtained new DEM data and BC outline data from GIS Analyst. Prepared and analyzed the the data. (See vignette)}
-\done{Obtained pine cover data from Barry, GIS Analyst performed preprocessing and Mario did the final clean up and analysis.}
+\done{Obtained new DEM data and BC outline data from GIS Analyst. Prepared and analyzed the the data. (See vignette {\it Preparation and analysis of the Digital Elevation Model and BC outline data})}
+\done{Obtained pine cover data from Barry, GIS Analyst performed preprocessing and Mario did the final clean up and analysis. (See vignette {\it Preparation and analysis of the BC pine cover data})}
 \todo{Check on CSI data integrity. BioSim flaked out over parts of BC in the initial runs, need to check that the corrupted data has been removed and replaced by the correct version.}
 \todo{Fix data inconsistencies at the edges of the DEM. This will have no effect on the results but is required for the model to run for all of BC.}
 \onhold{Follow up on CSI data conversion with GIS Analyst.}
 \todo{It appears the {\tt nn1} and {\tt nn2} variables include the focal location in the summation. Figure out how to deal with this.}
-\todo{For the manuscript we need to ppdate red top data and temperature data for post-2003 years and feed model with it.}
+\todo{For the manuscript we need to uppdate the red top data and temperature data for post-2003 years and feed model with it.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Session information
